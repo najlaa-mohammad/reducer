@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       <h1>Count - {count} </h1>
-      {/* <ActionSwitch/> */}
+      {/* <ActionSwitch/> */} 
       <ComponentA />
       <ComponentB />
       <ComponentC />
