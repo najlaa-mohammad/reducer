@@ -22,6 +22,7 @@ const reducer = (state, action) => {
         loading: true,
         error: "",
         posts: [],
+        
       };
     case "FETCH_SUCCESS":
       return {
