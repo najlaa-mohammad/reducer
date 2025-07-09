@@ -1,28 +1,20 @@
-import React from "react";
-import { initialState } from "../reducer";
-import { useCountContext } from "./Context/CountContext";
+
+import useCount from "../hooks/useCount";
+
 
 const ComponentC = () => {
-  const { dispatch } = useCountContext();
+  // <h1>{dispatch}</h1>;
+  const { increment, decrement, reset } = useCount();
 
   return (
     <div>
-      <button
-        type="button"
-        onClick={() => dispatch({ type: "increment", value: 3 })}
-      >
+      <button type="button" onClick={increment}>
         Increment
       </button>
-      <button
-        type="button"
-        onClick={() => dispatch({ type: "decrement", value: 3 })}
-      >
+      <button type="button" onClick={decrement}>
         Decrement
       </button>
-      <button
-        type="button"
-        onClick={() => dispatch({ type: "reset", value: initialState })}
-      >
+      <button type="button" onClick={reset}>
         Reset
       </button>
     </div>
