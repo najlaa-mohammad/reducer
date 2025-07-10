@@ -31,14 +31,18 @@
 // }
 
 // export default App;
-import React, { useCallback, useState } from 'react'
+
+
+import React, { useCallback } from 'react'
 import Count from './components/Count';
 import Button from './components/Button';
 import Title from './components/Title';
+import AppCoustom from './components/AppCoustom';
 
 const App = () => {
-  const[age,setAge]=useState(22)
-  const [salary, setSalary] = useState(420);
+  
+  const [age, setAge, salary, setSalary] = AppCoustom();
+  // const [salary, setSalary] = useState(420);
   
   const incrementAge = useCallback(() => setAge((prev) => prev + 1), []);
 
@@ -51,12 +55,59 @@ const incrementSalary = useCallback(() => setSalary((prev) => prev + 100), []);
       <Title />
       <Count text="age" count={age} />
       <Count text="salary" count={salary} />
-
       <Button onClick={incrementAge}>Increment age</Button>
       <Button onClick={incrementSalary}>Increment salary</Button>
-
+      <AppCoustom />
     </div>
   );
 }
 
 export default App
+
+// const initialTodos=
+// [
+// {  id :1 ,title:'learn react'},
+// {  id :2 ,title:'Build todos app'},
+
+// ]
+// import React, { useRef, useState } from 'react'
+
+// const App = () => {
+//   const[todos,setTodos]=useState(initialTodos)
+//   const inputRef=useRef(null)
+
+//   async function onSubmit(e){
+//     e.preventDefault()
+//     if (inputRef===null)
+//       return
+//     const newTodo = await createTodo(inputRef.current.value);
+//     setTodos((prev)=>[...prev,newTodo])
+//   }
+
+//   return (
+//     <div>
+//       <h1>Todo list</h1>
+//       <form onSubmit={onSubmit}>
+//         <input type="text" ref={inputRef} placeholder="add new todo"></input>
+//         <button type="submit">add to do</button>
+//       </form>
+//       <ul>{todos.map((todo=>
+//         <li
+//   key={todo.id}
+//   style={
+
+//     {opacity:todo.isPending?'0.5' :undefined,}
+//   }
+
+  
+//         >
+// {todo.title}
+//         </li>
+//         ))}
+//       </ul>
+//       <CreateTodo/>
+//     </div>
+//   );
+// }
+
+// export default App
