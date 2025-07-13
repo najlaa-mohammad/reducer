@@ -1,0 +1,106 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #efe8e8;
+  color: #111;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+.header.dark {
+  background: #111;
+  color: #fff;
+}
+
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation Styles */
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #61dafb;
+}
+
+/* Actions: Dark Mode + Menu Icon */
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.dark-toggle
+{
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+.menu-toggle {
+  display: none;
+}
+.lang-toggle {
+  font-size: 1.1rem;
+  padding: 4px 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+  .nav ul {
+    flex-direction: row;
+    /* background-color: #222; */
+    /* position: absolute; */
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    display: none;
+  }
+
+  .nav.open ul {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: inline-block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
